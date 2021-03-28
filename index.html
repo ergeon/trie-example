@@ -5,6 +5,46 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Trie step-by-step example</title>
+  <style>
+    .trie-example {
+      position: relative;
+      margin: 0 auto;
+      width: 100%;
+      max-width: 500px;
+      min-height: 400px;
+    }
+    .preview-image {
+      border: 1px solid gray;
+      width: 100%;
+    }
+    .current-prefix {
+      text-align: right;
+      color: darkgray;
+      font-style: italic;
+      font-size: 13px;
+    }
+    .step {
+      display: inline-block;
+      margin-right: 10px;
+      text-transform: capitalize;
+      color: darkblue;
+      cursor: default;
+    }
+    .step.active {
+      font-weight: bold;
+      color: darkblue;
+    }
+    .actions {
+      position: absolute;
+      height: 30px;
+      margin-top: 20px;
+      bottom: 0;
+      width: 100%;
+    }
+    .next-btn {
+      float: right;
+    }
+  </style>
 </head>
 <body>
   <div id="main"></div>

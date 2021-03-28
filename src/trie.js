@@ -21,15 +21,21 @@ const trie = new Trie();
 const init = () => availableCars.forEach(car => trie.insert(car.split(',')));
 init();
 
+function nextOptions(prefix) {
+  const options = trie.getOptions(prefix);
+  return options[prefix.length] || [];
+}
+
+function findClosestConfig(prefix) {
+  const options = trie.getOptions(prefix);
+  return [
+    ...prefix,
+    ...options.filter((_, index) => index >= prefix.length).map(option => option[0] || []),
+  ].map(option => option.split('=')[1]).join(',');
+}
+
 module.exports = {
-  nextOptions: function (prefix) {
-    const prefixNode = trie.find(prefix)
-    console.log(prefix, prefixNode);
-    const options = [];
-    prefixNode.getChildren().forEach(value => options.push(value.char));
-  
-    return options;
-  },
-  findClosestConfig: prefix => trie.findClosestWord(prefix),
+  nextOptions,
+  findClosestConfig,
   attributeOrder,
 };
