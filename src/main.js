@@ -61,7 +61,7 @@ class App extends React.Component {
       <div className="trie-example">
         <img
           className="preview-image"
-          src={`./assets/${closestConfig}.jpeg`} />
+          src={`./assets/${closestConfig}.jpg`} />
         <div className="current-prefix">
           Current prefix: [{prefix.join(',')}]
         </div>
