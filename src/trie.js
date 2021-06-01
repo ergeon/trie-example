@@ -1,5 +1,5 @@
 // Import trie library
-const Trie = require('@ergeon/trie');
+const Trie = require('@datastructures-js/trie');
 
 // Define valid configurations
 const availableConfigs = [
